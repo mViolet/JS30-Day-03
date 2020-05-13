@@ -1,1 +1,2 @@
-#JS30-Day03 Css Variables
+Day 3 - Css Variables
+Part of Wes Bos' 30-day Javascript challenge
