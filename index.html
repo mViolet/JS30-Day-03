@@ -4,21 +4,21 @@
   <meta charset="UTF-8">
   <title>Scoped CSS Variables and JS</title>
 </head>
-<body>
+<body id="body">
   <h2>Update CSS Variables with <span class='hl'>JS</span></h2>
 
   <div class="controls">
     <label for="spacing">Spacing:</label>
     <input id="spacing" type="range" name="spacing" min="10" max="200" value="10" data-sizing="px">
 
-    <label for="blur">Blur:</label>
-    <input id="blur" type="range" name="blur" min="0" max="25" value="10" data-sizing="px">
+    <label for="gray">Grayscale:</label>
+    <input id="gray" type="range" name="gray" min="0" max="100" value="10" data-sizing="%">
 
     <label for="base">Base Color</label>
-    <input id="base" type="color" name="base" value="#ffc600">
+    <input id="base" type="color" name="base" value="#8c4b2f">
   </div>
 
-  <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500">
+  <img id="img" src="https://source.unsplash.com/ZPdElUX7Ago/800x500">
 
   <style>
 
@@ -32,7 +32,7 @@
       color: white;
       font-family: 'helvetica neue', sans-serif;
       font-weight: 100;
-      font-size: 50px;
+      font-size: 30px;
     }
 
     .controls {
@@ -42,9 +42,46 @@
     input {
       width: 100px;
     }
+
   </style>
 
   <script>
+
+/* set up consts */
+    const img = document.getElementById("img");
+    const body = document.getElementById("body");
+
+    const spacing = document.getElementById("spacing");
+    const gray = document.getElementById("gray");
+    const base = document.getElementById("base");
+
+/*add even listeners for each input */
+    document.addEventListener('mousemove', () => {
+      setSpace();
+      setGray();
+      setColor();
+    });
+
+
+/* function to set spacing */
+  function setSpace () {
+      img.style.marginTop = (`${spacing.value}px`);
+      img.style.marginLeft = (`${spacing.value}px`);
+      console.log(`spacer value: ${spacing.value}`);
+    }
+
+/* function to set blur */
+  function setGray () {
+    img.style.filter = (`grayscale(${gray.value}%)`);
+    console.log(`grayscale value: ${gray.value}%`);
+  }
+
+/* function to set background color */
+  function setColor () {
+    body.style.background = (`${base.value}`);
+    console.log(`color value: ${base.value}`);
+  }
+
   </script>
 
 </body>
