@@ -28,6 +28,15 @@
       misc styles, nothing to do with CSS variables
     */
 
+    .hl {
+      color: #8c4b2f;
+    }
+
+    h2 {
+      padding: 20px;
+      background: rgba(10,10,10,0.8);
+    }
+
     body {
       text-align: center;
       background: #193549;
@@ -52,6 +61,7 @@
 /* set up consts */
     const img = document.getElementById("img");
     const body = document.getElementById("body");
+    const text = document.querySelector(".hl");
 
     const spacing = document.getElementById("spacing");
     const gray = document.getElementById("gray");
@@ -81,6 +91,7 @@
 /* function to set background color */
   function setColor () {
     body.style.background = (`${base.value}`);
+    text.style.color = (`${base.value}`);
     console.log(`color value: ${base.value}`);
   }
 
