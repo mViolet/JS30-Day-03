@@ -1,0 +1,41 @@
+ :root {
+      --base: #8c4b2f;
+      --spacing: 20px;
+      --gray: 10%;
+    }
+
+    img{
+      padding: var(--spacing);
+      background: var(--base);
+      filter: grayscale(var(--gray));
+    }
+
+    .hl {
+      color: var(--base);
+    }
+
+    /*
+      misc styles, nothing to do with CSS variables
+    */
+
+    h2 {
+      padding: 20px;
+      background: rgba(10,10,10,0.8);
+    }
+
+    body {
+      text-align: center;
+      background: #1a1a1a;
+      color: white;
+      font-family: 'Jost', sans-serif;
+      font-weight: 100;
+      font-size: 30px;
+    }
+
+    .controls {
+      margin-bottom: 50px;
+    }
+
+    input {
+      width: 100px;
+    }
